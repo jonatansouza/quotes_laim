@@ -1,10 +1,11 @@
-# Quotes
+# Quotes LAIM
 
-This project Quick start project To pratice
+This project Quick start project To pratice: 
+
 <li>Loopback
-<li>Material Design
 <li>Angular
 <li>Ionic framework
+<li>Material Design
 
 The purpose of this is list quotes and authors.
 The web and app provide a environment to CRUD quotes and authors
