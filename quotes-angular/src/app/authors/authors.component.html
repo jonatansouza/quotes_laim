@@ -1,0 +1,34 @@
+<mat-card class="mt-20">
+    <mat-card-title>
+      Authors
+    </mat-card-title>
+    <hr>
+    <mat-card-content>
+      <div fxLayout="row wrap" fxLayout.xs="column">
+        <div class="Authors-container" fxFlex.gt-xs="50%" fxFlex.gt-md="25%" *ngFor="let author of authors">
+          {{ author.name }}
+          <i>~{{author.description}}</i>
+          <div class="action-buttons">
+            <button *ngIf="loggedin" mat-raised-button color="primary" [routerLink]="['/authors/'+author.id+'/edit']">Edit</button>
+            <button *ngIf="loggedin" mat-raised-button color="warn" (click)="deleteAuthor(author)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-paginator [length]="pageLength"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="[5, 10, 25]"
+                (page)="pageEvent = pageEventEmit($event)">
+  </mat-paginator>
+  
+  
+  <div class="create-quote-fab">
+    <button mat-button mat-fab *ngIf="loggedin" [routerLink]="['/authors/create']">
+      <mat-icon>
+        add circle
+      </mat-icon>
+    </button>
+  </div>
+  

@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Quotes Angular</span>
+    <span class="qa-spacer"></span>
+    <button mat-button [routerLink]="['/quotes']">
+      <mat-icon>
+        format_quotes
+      </mat-icon>
+      Quotes
+    </button>
+    <button mat-button [routerLink]="['/authors']">
+      <mat-icon>
+        person
+      </mat-icon>
+      Authors
+    </button>
+    <button mat-button [matMenuTriggerFor]="auth">
+      <mat-icon>
+        more_vert
+      </mat-icon>
+    </button>
+    <mat-menu #auth="matMenu">
+      <button *ngIf="!loggedin" mat-menu-item [routerLink]="['/login']"> login</button>
+      <button *ngIf="loggedin" mat-menu-item (click)="logout()">logout</button>
+      
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="base-container">
+  <router-outlet (activate)="routeChange()"></router-outlet>
+</div>
+

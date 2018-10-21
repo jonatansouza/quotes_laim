@@ -1,0 +1,33 @@
+<mat-card class="mt-20">
+  <mat-card-title>
+    Quotes
+  </mat-card-title>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row wrap" fxLayout.xs="column">
+      <div class="quotes-container" fxFlex.gt-xs="50%" fxFlex.gt-md="25%" *ngFor="let quote of quotes">
+        {{ quote.content }}
+        <i>~{{quote.author?.name}}</i>
+        <div class="action-buttons">
+          <button *ngIf="loggedin" mat-raised-button color="primary" [routerLink]="['/quotes/'+quote.id+'/edit']">Edit</button>
+          <button *ngIf="loggedin" mat-raised-button color="warn" (click)="deleteQuote(quote)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-paginator [length]="pageLength"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="[5, 10, 25]"
+              (page)="pageEvent = pageEventEmit($event)">
+</mat-paginator>
+
+
+<div class="create-quote-fab">
+  <button mat-button mat-fab *ngIf="loggedin" [routerLink]="['/quotes/create']">
+    <mat-icon>
+      add circle
+    </mat-icon>
+  </button>
+</div>

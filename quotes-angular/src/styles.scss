@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.action-buttons{
+    margin-top: 20px;
+    float: right;   
+}
+.create-quote-fab{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #FFF
+}
+.quotes-container{
+    padding: 15px;
+}

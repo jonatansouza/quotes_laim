@@ -1,0 +1,17 @@
+<mat-card class="mt-20">
+  <mat-card-title>
+    Login
+  </mat-card-title>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="column">
+      <mat-form-field>
+        <input type="email" matInput placeholder="Enter a email" [(ngModel)]="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Enter a password" [(ngModel)]="password">
+      </mat-form-field>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </div>
+  </mat-card-content>
+</mat-card>

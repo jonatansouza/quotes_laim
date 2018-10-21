@@ -1,0 +1,22 @@
+<mat-card class="mt-20">
+  <mat-card-title>
+    Create Author
+  </mat-card-title>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="column">
+      <mat-form-field>
+        <textarea matInput placeholder="Enter a Name" [(ngModel)]="name">
+
+          </textarea>
+      </mat-form-field>
+      <mat-form-field>
+
+        <textarea matInput placeholder="Enter a Description" [(ngModel)]="description">
+
+            </textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="saveAuthor()">Save Author</button>
+    </div>
+  </mat-card-content>
+</mat-card>
